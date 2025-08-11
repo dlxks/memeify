@@ -1,3 +1,5 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
+
 export default function MemeForm({ meme, handleChange, getRandomMeme, saveMemeAsImage }) {
   return (
     <div className="form">
@@ -19,8 +21,14 @@ export default function MemeForm({ meme, handleChange, getRandomMeme, saveMemeAs
         <label>Color <input type="color" name="bottomColor" value={meme.bottomColor} onChange={handleChange} /></label>
       </div>
 
-      <button onClick={getRandomMeme} className="generate-btn">Get a new meme image 🖼</button>
-      <button onClick={saveMemeAsImage} className="save-btn">Save Meme</button>
+      <button onClick={getRandomMeme} className="generate-btn">
+        Get a new image
+        <Icon icon="material-symbols:image" className="icon" />
+      </button>
+      <button onClick={saveMemeAsImage} className="save-btn">
+        Save Meme
+        <Icon icon="material-symbols:save" className="icon" />
+      </button>
     </div>
   );
 }
